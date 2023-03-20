@@ -1,0 +1,23 @@
+// Reset element default style
+@import "reset";
+
+// Variables
+@import 'variables';
+
+// Mixins
+@import 'mixins';
+
+// Bootstrap
+@import "bootstrap";
+
+// Fontawesome
+@import "~@fortawesome/fontawesome-free/css/regular";
+@import "~@fortawesome/fontawesome-free/css/brands";
+@import "~@fortawesome/fontawesome-free/css/solid";
+
+// Common styles
+@import "loading";
+@import "common";
+
+// Modifiers (it will always be the last one to import)
+@import "modifiers";

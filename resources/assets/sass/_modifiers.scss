@@ -1,0 +1,57 @@
+.full_width {
+    width: 100%;
+    display: block;
+}
+
+.full_height {
+    height: 100%;
+}
+
+.full_content {
+    width: 100%;
+    height: 100%;
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+.no_border {
+    border: none;
+}
+
+.no_padding {
+    padding: 0 !important;
+}
+
+.no_margin {
+    margin: 0 !important;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+.scroll-disable {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+.word-break {
+    word-break: break-word;
+}
+
+.modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    color: white;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+.text-red {
+    color: #FF4A55 !important;
+}

@@ -1,0 +1,36 @@
+@import "variables";
+
+.modal-custom {
+    .modal-content {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .modal-header {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        height: 53px;
+        color: white;
+        background-color: $primary-color;
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+
+    .modal-body {
+        padding: 25px;
+    }
+
+    &__single-msg {
+        text-align: center;
+        margin: 25px 0 50px;
+    }
+
+    &.is_small {
+        .modal-dialog {
+            width: 600px;
+        }
+    }
+}

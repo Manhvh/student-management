@@ -1,0 +1,102 @@
+.loading-container {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+
+    &__wrapper-loader {
+        @include animation(rotate 2s linear infinite);
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+
+    &__loader {
+        @include image-background;
+        position: relative;
+        text-indent: -9999em;
+        width: 60px;
+        height: 60px;
+        animation: ffh-loading 1.4s infinite linear;
+        transform: translateZ(0);
+        background-image: url('/assets/images/loading.png');
+    }
+}
+
+.loading-container-wrapper {
+    position: relative;
+
+    &.loading_right {
+        &:after {
+            right: 10px;
+        }
+
+        .loading-container {
+            width: calc(100% - 6px);
+            height: calc(100% - 2px);
+            top: 1px;
+            left: 3px;
+
+            &__wrapper-loader {
+                width: 16px;
+                height: 16px;
+                left: initial;
+                right: 10px;
+                margin-top: -8px;
+                margin-left: initial;
+            }
+
+            &__loader {
+                width: 16px;
+                height: 16px;
+                @include animation(ffh-loading 0.2s linear infinite);
+            }
+        }
+
+        &.is_not_input {
+            .loading-container {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+.loading_full_page {
+    &>.loading-container {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 9999;
+    }
+}
+
+@include keyframe(ffh-loading) {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@include keyframe(ffh-fadeout) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
